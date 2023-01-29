@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="{% static 'assets/css/bootstrap.min.css'%}" rel="stylesheet">
+    <!-- fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <!-- fonts CSS -->
+    <link href="{% static 'assets/css/font.css'%}" rel="stylesheet">
+    <!-- hover effect CSS -->
+    <link href="{% static 'assets/css/hover-min.css'%}" rel="stylesheet">
+    <!-- stylesheet CSS -->
+    <link href="{% static 'assets/css/stylesheet.css'%}" rel="stylesheet">
+    <!--favicon -->
+    <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png'%}">
+    <title>Taroos Game</title>
+
+  </head>
+  <body>
+    <!-- <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div> -->
+    {% block body%} 
+    {% endblock %}  
+   <!--Script-->
+    <!-- jquery  -->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js'%}"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js'%}"></script> 
+    <!-- my js  -->
+    
+   
+
+  </body>
+</html>

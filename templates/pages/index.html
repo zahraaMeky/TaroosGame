@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block body%} 
+{% include 'pages/navbar.html'%}
+<div class="taroos-frame my-3">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 col-md-12">
+                <div class="iframe iframeGame">
+                    <iframe class="responsive-iframe" src="{% url 'game' %}" target="_parent"></iframe>
+                  </div>
+               </div>
+            </div>
+    </div>
+    <!-- {{request.user.id}} -->
+    <script src="{% static 'assets/js/js.js'%}"></script> 
+    
+    <script>
+        let url=`ws://${window.location.host}/ws/game/`
+        const gameSocket = new WebSocket(url);
+
+        gameSocket.onopen = function (e) {
+            gameSocket.send(JSON.stringify({"id": '{{request.user.id}}'}));
+    };
+
+
+
+
+    </script>
+
+</div>
+
+
+
+{%endblock%} 

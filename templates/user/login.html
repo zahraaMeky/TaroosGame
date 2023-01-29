@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body%} 
+{% load crispy_forms_tags %}
+<!--start form for new user-->
+<div class="loginPage d-flex align-items-center">
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="{% static 'assets/img/icon.png'%}" class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="custominput ">
+                            <img class="user-img"src="{% static 'assets/img/user.png'%}" width="50px" height="50px">
+                            <input type="text"  name="username" class="input_user" value="" placeholder="username">
+                        </div>
+                        <div class="custominput">
+                            <img class="user-img"src="{% static 'assets/img/password.png'%}" width="50px" height="50px">
+                            <input type="password" name="password"  class="input_user" value="" placeholder="password">
+                        </div>
+
+                        <div class="d-flex login_container">  
+                        <button type="submit" name="button" class="btn login_btn">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Login
+                        </button>
+                        <a href="{%url 'register'%}" class="btn register_btn">
+                            <i class="fa-solid fa-user"></i>
+                            Register
+                        </a>
+                        </div>
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div id="snackbar">
+                        {{ message }}
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    </form>              
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+</script>
+{% endblock%} 
+<!--End form for new user-->

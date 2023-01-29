@@ -1,0 +1,69 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body%} 
+{% load crispy_forms_tags %}
+<div class="registerPage">
+    <div class="container">
+        <div class="top">
+          <h1>Plans & Pricing</h1>
+          <div class="toggle-btn">
+            <span style="margin: 0.8em;">Annually</span>
+            <label class="switch">
+              <input type="checkbox" id="checbox" onclick="check()" ; />
+              <span class="slider round"></span>
+            </label>
+            <span style="margin: 0.8em;">Monthly</span></div>
+        </div>
+   
+                <div class="row">
+                    {%for plan in plans%}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="pricingTable">
+                            <div class="pricingTable-header">
+                                <h3 class="title">{{plan.PlanName}}</h3>
+                            </div>
+                            <ul class="pricing-content">
+                                <li>{{plan.PlanAccounts}} Accounts</li> 
+                            </ul>
+                            <div class="price-value">
+                                <span class="text1">${{plan.PlanPrice}}</span>
+                                <span class="text2">${{plan.Annual_Price}}</span>
+                            </div>
+                            <div class="pricingTable-signup">
+                              <form method="post" action="{% url 'plan' %}">
+                                {% csrf_token %}
+                                <input type="hidden" value={{plan.PlanName}} name="pname">
+                                <input class="period" type="hidden"  name="pperiod">
+                                <input class="rbtn" type="submit" value="Register">
+                              </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>  
+      </div>
+    
+</div>
+<script>
+    function check() {
+  var checkBox = document.getElementById("checbox");
+  var period = document.getElementsByClassName("period");
+  var text1 = document.getElementsByClassName("text1");
+  var text2 = document.getElementsByClassName("text2");
+  for (var i = 0; i < text1.length; i++) {
+    if (checkBox.checked == true) {
+      text1[i].style.display = "block";
+      text2[i].style.display = "none";
+      period[i].value = "month"
+    } else if (checkBox.checked == false) {
+      text1[i].style.display = "none";
+      text2[i].style.display = "block";
+      period[i].value = "year"
+    }
+  }
+}
+check();
+
+</script>
+{% endblock%} 

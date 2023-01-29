@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body%} 
+{% load crispy_forms_tags %}
+<div class="plandetails d-flex align-items-center">
+    <div class="container">
+        <div  class="plancontainer">
+            <h3 class="text-center">
+                <i class="fa-solid fa-circle-check"></i>
+                You Have Subscription end<br> 
+            </h3>
+            <a href="/" class="btn b-pay">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Renew
+            </a>
+        </div>
+      </div>
+    
+</div>
+
+{% endblock%} 

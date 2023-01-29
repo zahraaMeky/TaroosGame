@@ -1,0 +1,83 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body%} 
+
+<section class="profile">
+    {% include 'pages/navbar.html'%}
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-lg-6 mb-4 mb-lg-0">
+          <div class="card mb-3" style="border-radius: .5rem;">
+            <div class="row g-0">
+              <div class="col-md-4 gradient-custom text-center text-white"
+                style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                  alt="Avatar" class="img-fluid my-5" style="width: 80px;"/>
+                <h6>Account Numbers</h6>
+                <p>{{userInfo.AccountsNum}} Accounts</p>
+                <div class="pricingTable-signup mb-3">
+                    <a href="#" class="rbtn">Cancel Plan</a>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body p-4">
+                  <h6>Information</h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-8 mb-2">
+                      <h6>Email</h6>
+                      <p class="text-muted">{{userInfo.email}}</p>
+                    </div>
+                   </div>
+                   <div class="row">
+                    {% for i in n %}
+                    <div class="col mb-2">
+                      <h6>User {{i|add:1}}</h6>
+                    </div>
+                    {%endfor%} 
+                  </div>
+                   <div class="row">
+                    {%for account in accounts%}
+                    <div class="col mb-2">
+                      <p class="text-muted">{{account.account}}</p>
+                    </div>
+                    {%endfor%}
+                  </div>
+                   <div class="row">
+                    <div class="col-4 mb-2">
+                      <h6>Plan Name</h6>
+                      <p class="text-muted">{{userInfo.planName}}</p>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <h6>Plan Price</h6>
+                        <p class="text-muted">{{userInfo.PlanPrice}} OMR</p>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <h6>Plan Period</h6>
+                        <p class="text-muted">{{userInfo.subscribeperiod}}</p>
+                    </div>
+                  </div>
+                  <h6></h6>
+                  <hr class="mt-0 mb-4">
+                  <div class="row pt-1">
+                    <div class="col-12 mb-3">
+                        <div class="pricingTable-signup mb-3">
+                            <a href="{%url 'password'%}" class="rbtn">Reset Password</a>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock%} 

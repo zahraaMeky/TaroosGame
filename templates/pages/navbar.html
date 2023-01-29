@@ -1,0 +1,56 @@
+{% load static %}
+<!--Start Navigation Section-->
+<div class="customnavbar py-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div>
+          <img src="{% static 'assets/img/icon.png'%}" alt="" width="60" height="60" />
+        </div>
+        {% if user.is_authenticated %}
+        <div class="userNameProfile"> 
+          <p class="nameofUser">{{request.user}}</p>
+          <a href="{% url 'profile' %}">
+            <img class='profileImage' src="{% static 'assets/img/user.png'%}" alt="" width="40" height="40" />
+          </a>
+        </div>
+        {% else %}
+        <div class="nav-item">
+          <a class="nav-link  hvr-grow-shadow" href="{% url 'login' %}">Log In\nتسجيل الدخول</a>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col-6 d-flex justify-content-end">
+        <a class="nav-link  hvr-grow-shadow" href="{% url 'logout' %}">
+          <img class="user-img"src="{% static 'assets/img/logout.png'%}" width="40px" height="40px">
+        </a>
+      </div>
+    </div>
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {% if user.is_authenticated %}
+        <li class="nav-item" style="text-align: center;font-weight: 600">
+          <a class="nav-link active hvr-grow-shadow" aria-current="page">
+            <i class="fa-solid fa-user-astronaut"></i>
+            {{request.user}}
+          </a>
+        </li>
+        <li class="nav-item" style="text-align: center;font-weight: 600">
+          <a class="nav-link  hvr-grow-shadow" href="{% url 'logout' %}">
+            <img class="user-img"src="{% static 'assets/img/logout.png'%}" width="40px" height="40px">
+          </a>
+        </li>
+        {% else %}
+      <li class="nav-item">
+        <a class="nav-link  hvr-grow-shadow" href="{% url 'login' %}">Log In\nتسجيل الدخول</a>
+      </li>
+      {% endif %}
+    </ul>
+    </div> -->
+  </div>
+</div>
+<!--End Navigation Section-->

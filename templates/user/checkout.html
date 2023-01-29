@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block body%} 
+{% load crispy_forms_tags %}
+<div class="plandetails  d-flex align-items-center">
+    <div class="container">
+        <h3 class="text-center">
+            <i class="fa-solid fa-circle-info"></i>
+            Plan Details
+        </h3>
+        <form class="plancontainer registerform" method="POST" action="{%url 'checkout'%}">
+            {% csrf_token %}
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-sharp fa-solid fa-user"></i>
+                            </span>
+                            <input name="name" type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-envelope-circle-check"></i>
+                            </span>
+                            <input type="email" name="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fa-solid fa-mobile-retro"></i>
+                            </span>
+                            <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="hidden" value={{plan.id}}  name="pid">
+                            <input type="hidden" value={{plan.name}} name="pname">
+                            <input type="hidden" value={{plan.time}} name="ptime">
+                            <input id="period" type="hidden" value={{plan.price}}  name="pprice">
+                        </div>
+                        
+                </div>
+                <div class="col-md-6">
+                    <table class="table mt-4">
+                        <tbody>
+                          <tr>
+                            <th scope="row"><i class="fa-brands fa-lastfm"></i></th>
+                            <td>Plan Name</td>
+                            <td>{{plan.name}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"> <i class="fa-solid fa-barcode"></i></th>
+                            <td>Plan Accounts</td>
+                            <td>{{plan.account}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"> <i class="fa-regular fa-money-bill-1"></i></th>
+                            <td>Plan Price</td>
+                            <td>{{plan.price}} OMR</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn b-pay">
+                        <i class="fa-solid fa-money-check-dollar"></i>
+                        CheckOut
+                    </button>
+                </div>
+            </div>
+        </form>
+      </div>
+    
+</div>
+
+{% endblock%} 
