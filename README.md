@@ -21,5 +21,6 @@ Paid game to help students learn basic electronics.
   ## <a name="features">🔋 Features</a>
   
 👉 **Authentication and Authorization**: Secure user access with registration, login, and route protection.
+
 👉 **As long as the user is logged in, he cannot log in again with another browser or device.
 </div>
