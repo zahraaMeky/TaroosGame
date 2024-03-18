@@ -22,6 +22,6 @@ Taroos Game is an innovative educational tool designed to assist students in lea
   
 👉 **Authentication and Authorization: Implement a robust user authentication system with registration, login, and route protection.<br/>
 👉 **Single Device Authentication: Enhance security by restricting user logins to a single device or browser session at a time. Once a user is logged in, they cannot log in      again from another browser or device, preventing unauthorized access and ensuring a seamless user experience..<br/>
-👉 **Interactive Gameplay: Engage users with interactive gameplay elements that simulate real-world electronics scenarios, providing hands-on learning opportunities and         &ensp;reinforcing theoretical concepts..<br/>
+👉 **Interactive Gameplay: Engage users with interactive gameplay elements that simulate real-world electronics scenarios, providing hands-on learning opportunities and         &ensp;reinforcing theoretical concepts.<br/>
 👉 **Thawani Payment Gateway Integration: Facilitate seamless payment transactions using the Thawani Payment Gateway, offering users a convenient and secure way to purchase     &ensp; access to the game's premium features and content.
 </div>
