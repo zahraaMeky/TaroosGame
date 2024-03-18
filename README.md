@@ -5,6 +5,7 @@ https://github.com/zahraaMeky/TaroosGame/assets/123356306/ad2884a4-16cf-45c4-bb1
 </div>
 <div align="left">
    <h3 align="center">Taroos Game</h3>
+   
 ## <a name="introduction">🤖 Introduction</a>
 
 Paid game to help students learn basic electronics.
